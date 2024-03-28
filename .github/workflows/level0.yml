@@ -33,6 +33,9 @@ jobs:
       - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
+      - uses: rlespinasse/github-slug-action@v4
+        with:
+          short-length: 8
       - name: Check for profanities in issue body
         id: check_profanities
         run: |
