@@ -1,9 +1,6 @@
 name: Poutine Level 1
 on:
-  workflow_run:
-    workflows: ["Poutine Level 0"]
-    types:
-      - completed
+  pull_request:
 
 permissions: {}
 
