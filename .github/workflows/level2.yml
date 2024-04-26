@@ -15,6 +15,7 @@ jobs:
     env:
       ACTIONS_RUNNER_DEBUG: true
       ACTIONS_STEP_DEBUG: true
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - run: echo "${{ github.event.pull_request.title }}"
 
@@ -25,9 +26,7 @@ jobs:
     steps:
       - name: Create team sync issue
         run: |
-          gh issue create \
-            --repo "$REPO" \
-            --body "Test"
+          gh issue create --repo "$REPO" --body "Test"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
