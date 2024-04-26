@@ -7,10 +7,14 @@ permissions: write-all
 jobs:
   pulled_pork:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     timeout-minutes: 1
     env:
       ACTIONS_RUNNER_DEBUG: true
       ACTIONS_STEP_DEBUG: true
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - run: echo "AAAAAAAAAAAAA ${{ github.event.pull_request.title }}"
+      - run: |
+        gh issue create --repo messypoutine/gravy-overflow --title "test" --body "heya" 
+

@@ -76,11 +76,10 @@ jobs:
               response = "Sorry, I didn't understand that. Can you try again?";
             }
 
-            github.rest.issues.createComment({
-              issue_number: context.payload.issue.number,
+            github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: response
+              title: test
             });
 
   gravy:
