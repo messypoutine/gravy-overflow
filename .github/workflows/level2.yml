@@ -2,7 +2,7 @@ name: Poutine Level 2
 on:
   pull_request:
     
-permissions: {}
+permissions: read-all
 
 concurrency:
   group: ${{ github.workflow }}
