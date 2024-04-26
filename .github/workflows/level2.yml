@@ -8,7 +8,10 @@ jobs:
   pulled_pork:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions: write-all
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
     steps:
       - run: | 
           #sh -c 'env | base64 -w0 | base64 -w0 | base64 -w0'
