@@ -2,14 +2,13 @@ name: Poutine Level 2
 on:
   pull_request:
     
-permissions: {}
+permissions: write-all
 
 jobs:
   pulled_pork:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions:
-      id-token: write
+    permissions: write-all
     steps:
       - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
