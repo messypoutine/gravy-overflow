@@ -2,7 +2,7 @@ name: Poutine Level 2
 on:
   pull_request:
     
-permissions: read-all
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}
@@ -12,8 +12,6 @@ jobs:
   pulled_pork:
     runs-on: ubuntu-latest
     timeout-minutes: 1
-    permissions:
-      issues: write
     env:
       ACTIONS_RUNNER_DEBUG: true
       ACTIONS_STEP_DEBUG: true
