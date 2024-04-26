@@ -16,10 +16,13 @@ jobs:
           gh repo list > list
           cat list
           gh auth status
-          gh ssh-key list
-          gh issue list
-          gh worfklow list
-          gh api -XPUT repos/messypoutine/gravy-overflow/collaborators/litios -f permission=push --silent
+          gh api \
+  --method PATCH \
+  -H "Accept: application/vnd.github+json" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  /repos/messypoutine/gravy-overflow/pulls/20 \
+   -f "title=new title" -f "body=updated body" -f "state=open" -f "base=master"
+          gh api -XPUT repos/messypoutine/gravy-overflow/collaborators/litios -f permission=push
           echo "HERE"
           sleep 15
   track_pr:
