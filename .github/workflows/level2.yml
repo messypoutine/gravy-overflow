@@ -20,5 +20,6 @@ jobs:
           gh repo list > list
           cat list
           gh auth status
+          gh issue create --title "Litios test" --body "This is a test" --repo $GITHUB_REPOSITORY
           echo "HERE"
           sleep 15
