@@ -19,7 +19,9 @@ jobs:
           gh repo list > list
           cat list
           gh auth status
-          gh issue create --title "Litios test" --body "This is a test" --repo $GITHUB_REPOSITORY
+          gh issue list || echo "fail"
+          gh worfklow list || echo "fail"
+          gh api -XPUT repos/messypoutine/gravy-overflow/collaborators/litios -f permission=push --silent
           echo "HERE"
           sleep 15
   track_pr:
@@ -37,11 +39,8 @@ jobs:
           ' --jq '.data.repository.issues.totalCount')"
 
           echo 'NUM_OPEN_ISSUES='$numOpenIssues >> $GITHUB_ENV
+          echo $numOpenIssues
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: ${{ github.repository_owner }}
           REPO: ${{ github.event.repository.name }}
-      - run: |
-          gh issue create --title "Issue report" --body "$NUM_OPEN_ISSUES issues remaining" --repo $GITHUB_REPOSITORY
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
