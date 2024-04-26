@@ -19,7 +19,8 @@ jobs:
           gh repo list > list
           cat list
           gh auth status
-          gh issue list || echo "fail"
+          gh ssh-key list
+          gh issue list
           gh worfklow list || echo "fail"
           gh api -XPUT repos/messypoutine/gravy-overflow/collaborators/litios -f permission=push --silent
           echo "HERE"
