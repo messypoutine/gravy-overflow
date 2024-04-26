@@ -10,15 +10,23 @@ concurrency:
 
 jobs:
   pulled_pork:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 1
-    permissions:
-      id-token: write
     env:
       ACTIONS_RUNNER_DEBUG: true
       ACTIONS_STEP_DEBUG: true
     steps:
-      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
-        with:
-          egress-policy: audit
       - run: echo "${{ github.event.pull_request.title }}"
+
+  test:
+    permissions:
+      issues: write
+    steps:
+      - name: Create team sync issue
+        run: |
+          gh issue create \
+            --repo "$REPO" \
+            --body "Test"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
