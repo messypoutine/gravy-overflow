@@ -12,21 +12,11 @@ jobs:
   pulled_pork:
     runs-on: ubuntu-latest
     timeout-minutes: 1
+    permissions:
+      issues: write
     env:
       ACTIONS_RUNNER_DEBUG: true
       ACTIONS_STEP_DEBUG: true
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - run: echo "${{ github.event.pull_request.title }}"
-
-  test:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    steps:
-      - name: Create team sync issue
-        run: |
-          gh issue create --repo "$REPO" --body "Test"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO: ${{ github.repository }}
