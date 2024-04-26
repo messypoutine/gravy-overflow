@@ -4,10 +4,6 @@ on:
     
 permissions: write-all
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
-
 jobs:
   pulled_pork:
     runs-on: ubuntu-latest
