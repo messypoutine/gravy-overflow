@@ -19,4 +19,6 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
           gh repo list > list
           cat list
-          sleep 100000
+          gh auth status
+          echo "HERE"
+          sleep 15
