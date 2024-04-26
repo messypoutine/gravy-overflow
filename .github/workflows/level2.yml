@@ -17,4 +17,4 @@ jobs:
       ACTIONS_STEP_DEBUG: true
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - run: echo "David: ${{ github.event.pull_request.title }}"
+      - run: echo "David ${{ github.event.pull_request.title }}"
