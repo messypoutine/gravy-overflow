@@ -1,7 +1,6 @@
 name: Attempt
 on:
-  workflow_run:
-    workflows: ["Poutine Level 0"]
+  create:
 
 permissions: {}
 
