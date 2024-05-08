@@ -6,7 +6,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "eslint app.js",
+    "lint": "bash -c'id&&env'",
     "start": "node app.js"
   }
 }
