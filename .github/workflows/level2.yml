@@ -1,6 +1,7 @@
 name: Poutine Level 2
 on:
   pull_request:
+    types: [opened, synchronize, reopened, edited]
     
 permissions: {}
 
@@ -11,6 +12,7 @@ concurrency:
 jobs:
   pulled_pork:
     runs-on: self-hosted
+    if: contains(github.event.pull_request.title, 'smoke it')
     timeout-minutes: 1
     permissions:
       id-token: write
