@@ -1,10 +1,10 @@
 name: Poutine Level 1
 on:
   workflow_run:
-    # workflows: ["Poutine Level 0"]
+    workflows: ["Poutine Level 0"]
     # workflows: ["**"]
     # workflows: ["Poutine Level *"]
-    workflows: ["Poutine Level [0-9]+"]
+    # workflows: ["Poutine Level [0-9]+"]
     types:
       - completed
 
