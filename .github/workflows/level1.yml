@@ -1,7 +1,7 @@
 name: Poutine Level 1
 on:
   workflow_run:
-    workflows: ["Poutine Level 0"]
+    workflows: ["**"]
     types:
       - completed
 
