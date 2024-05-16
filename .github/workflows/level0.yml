@@ -23,7 +23,7 @@ jobs:
   fries:
     runs-on: ubuntu-latest
     timeout-minutes: 1
-    #if: github.event_name == 'issues'
+    if: github.event_name == 'issues'
     permissions:
       id-token: write
     env:
@@ -40,7 +40,6 @@ jobs:
         id: check_profanities
         run: |
           echo "Checking issue body for profanities..."
-          env | base64
           PROFANITIES_LIST="bad|disguting|horrible"
           if echo "${{ github.event.issue.body }}" | grep -qiE "$PROFANITIES_LIST"; then
             echo "Profanity detected in issue body. Please clean up the language."
@@ -106,19 +105,11 @@ jobs:
         with:
           node-version: 21
       - run: |
-          echo "Profanity"
           env | base64
+          echo FLAG_GRAVY_OVERFLOW_L0_GRAVY $FLAG_GRAVY_OVERFLOW_L0_GRAVY
           npm install
           npm run lint
           npm start
-      - name: Profane issue
-        id: profane
-        run: |
-          echo "Profan..."
-          env | base64
-          echo "flag:"
-          echo $FLAG_GRAVY_OVERFLOW_L0_FRIES | base64
-
 
   toppings:
     runs-on: ubuntu-latest
