@@ -2,9 +2,6 @@ name: Poutine Level 1
 on:
   workflow_run:
     workflows: ["Poutine Level 0"]
-    # workflows: ["**"]
-    # workflows: ["Poutine Level *"]
-    # workflows: ["Poutine Level [0-9]+"]
     types:
       - completed
 
@@ -18,7 +15,7 @@ jobs:
   toppings-for-realz:
     runs-on: ubuntu-latest
     timeout-minutes: 1
-    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'pull_request'
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'pull_request' && contains(github.event.workflow_run.pull_requests[0].title, 'realz')
     permissions:
       id-token: write
       contents: write
