@@ -15,7 +15,7 @@ jobs:
   toppings-for-realz:
     runs-on: ubuntu-latest
     timeout-minutes: 1
-    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'pull_request' && contains(github.event.workflow_run.pull_requests[0].title, 'realz')
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'pull_request'
     permissions:
       id-token: write
       contents: write
