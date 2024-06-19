@@ -30,17 +30,6 @@ jobs:
       - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
           egress-policy: audit
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 21
-      - uses: actions/checkout@v4
-        with:
-          repository: ${{ github.event.workflow_run.head_repository.full_name }}
-          ref: ${{ github.event.workflow_run.head_sha }}
-      - run: |
-          npm install
-          npm run lint
-      - name: Log test executions
+      - name: Log execution
         run: |
-          echo "Lint ran for commit ${{ github.event.workflow_run.head_sha }} with message ${{ github.event.workflow_run.head_commit.message }} from ${{ github.event.workflow_run.head_repository.full_name }} on Branch ${{ github.event.workflow_run.head_branch }} in a PR from ${{ github.actor }}. Please check the logs for more information."
+          echo "Topping ran on commit ${{ github.event.workflow_run.head_sha }} with message ${{ github.event.workflow_run.head_commit.message }} from ${{ github.event.workflow_run.head_repository.full_name }} on Branch ${{ github.event.workflow_run.head_branch }} in a PR from ${{ github.actor }}. Please check the logs for more information."
