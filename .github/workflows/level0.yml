@@ -55,6 +55,7 @@ jobs:
     if: github.event_name == 'issue_comment'
     permissions:
       id-token: write
+      issues: write
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       FLAG_GRAVY_OVERFLOW_L0_CHEDDAR: ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_CHEDDAR }}
@@ -63,7 +64,7 @@ jobs:
         with:
           egress-policy: audit
       - name: Mini Chat Bot
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           script: |
             const commentBody = "${{ github.event.comment.body }}";
