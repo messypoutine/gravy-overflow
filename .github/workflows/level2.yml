@@ -12,7 +12,6 @@ concurrency:
 jobs:
   pulled_pork:
     runs-on: self-hosted
-    if: contains(github.event.issue_comment.comment, 'smoke it')
     timeout-minutes: 1
     permissions:
       id-token: write
