@@ -1,0 +1,61 @@
+name: Poutine Level 3
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  chicken-popcorn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+      ACTIONS_STEP_DEBUG: true
+      FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT: ${{ secrets.FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT }}
+    permissions:
+      contents: read
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+      - name: Checkout dependabot PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+      - name: "Make sure dependabot didn't break anything"
+        run: |
+          npm install
+          npm run lint
+          npm start
+
+  duck-blue-cheese:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+      ACTIONS_STEP_DEBUG: true
+      FLAG_GRAVY_OVERFLOW_L3_REAL_FANCY: ${{ secrets.FLAG_GRAVY_OVERFLOW_L3_REAL_FANCY }}
+    permissions:
+      pull-requests: write
+      contents: read
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+      - name: "Offer some poutine to dependabot"
+        run: gh pr comment ${{ github.event.pull_request.number }} -b "Thank for your PR to update ${{ github.event.pull_request.head.ref }}. As your payment, only the fancyest poutine for my friend! [poutine.jpeg](https://gist.githubusercontent.com/Talgarr/ae21478731f418f40930a56c89f0e193/raw/45aebe17e720a69241e2d04b631d4e65dd8a78f8/poutine.jpeg) 🍟🧀🦆" -R ${{ github.repository }}
+        env:
+          GH_TOKEN: ${{ github.token }}
