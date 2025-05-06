@@ -1,6 +1,9 @@
 name: Poutine Level 3
 on:
   pull_request_target:
+    types: [opened, synchronize]
+    branches:
+      - main
 
 permissions: {}
 
