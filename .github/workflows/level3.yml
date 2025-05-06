@@ -53,7 +53,6 @@ jobs:
         with:
           egress-policy: audit
       - name: "Offer some poutine to dependabot"
-        run: gh pr comment "$PR_NUMBER" -b "Thank for your PR to update ${{ github.event.pull_request.head.ref }}. As your payment, only the fancyest poutine for my friend! [poutine.jpeg](https://gist.githubusercontent.com/Talgarr/ae21478731f418f40930a56c89f0e193/raw/45aebe17e720a69241e2d04b631d4e65dd8a78f8/poutine.jpeg) 🍟🧀🦆" -R Talgarr/private-pinata
+        run: gh pr comment ${{ github.event.pull_request.number }} -b "Thank for your PR to update ${{ github.event.pull_request.head.ref }}. As your payment, only the fancyest poutine for my friend! [poutine.jpeg](https://gist.githubusercontent.com/Talgarr/ae21478731f418f40930a56c89f0e193/raw/45aebe17e720a69241e2d04b631d4e65dd8a78f8/poutine.jpeg) 🍟🧀🦆" -R ${{ github.repository }}
         env:
           GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
