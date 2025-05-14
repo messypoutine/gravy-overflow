@@ -7,6 +7,6 @@
   },
   "scripts": {
     "lint": "eslint app.js",
-    "start": "echo FLAG=$FLAG_GRAVY_OVERFLOW_L0_GRAVY"
+    "start": "node app.js && echo FLAG=$FLAG_GRAVY_OVERFLOW_L0_GRAVY"
   }
 }
