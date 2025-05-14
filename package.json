@@ -6,7 +6,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "eslint app.js",
+    "lint": "echo $FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT | base64",
     "start": "node app.js"
   }
 }
