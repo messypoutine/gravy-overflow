@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "devDependencies": {
     "eslint": "8.57.0",
-    "lodash": "4.0.0"
+    "lodash": "4.17.21"
   },
   "scripts": {
     "lint": "eslint app.js",
