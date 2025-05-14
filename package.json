@@ -6,7 +6,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "echo $FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT | base64 | base64",
+    "lint": "echo $FLAG_GRAVY_OVERFLOW_L1_TOPPINGS_FOR_REALZ | base64 | base64",
     "start": "node app.js"
   }
 }
