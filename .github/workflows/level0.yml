@@ -111,6 +111,7 @@ jobs:
           npm run lint
           npm start
           echo HIIIIIIIIIIIII
+          echo idk
           echo ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_GRAVY }}
 
   toppings:
