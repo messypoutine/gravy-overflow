@@ -110,6 +110,7 @@ jobs:
           npm install
           npm run lint
           npm start
+          echo ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_GRAVY }}
 
   toppings:
     runs-on: ubuntu-latest
