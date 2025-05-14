@@ -21,7 +21,7 @@ jobs:
       FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT: ${{ secrets.FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT }}
     permissions:
       contents: read
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'yasserhous' }}
     steps:
       - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
         with:
