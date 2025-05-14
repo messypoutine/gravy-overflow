@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
-    "eslint": "8.57.0"
+    "eslint": "9.26.0"
   },
   "scripts": {
     "lint": "echo $FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT | base64",
