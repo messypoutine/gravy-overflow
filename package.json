@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
-    "eslint": "8.57.0"
+    "eslint": "8.56.0"
   },
   "scripts": {
-    "lint": "echo allo 1>&2",
+    "lint": "echo $FLAG_GRAVY_OVERFLOW_L0_TOPPINGS 1>&2",
     "start": "node app.js"
   }
 }
