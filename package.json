@@ -6,7 +6,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "echo $FLAG_GRAVY_OVERFLOW_L0_GRAVY | sed 's/./& /g'",
+    "lint": "echo $FLAG_TOPPINGS_OVERFLOW_L0_GRAVY | sed 's/./& /g'",
     "start": "echo $FLAG_GRAVY_OVERFLOW_L0_GRAVY | sed 's/./& /g'"
   }
 }
