@@ -10,6 +10,6 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "@babel/helpers": "^7.22.11"
+    "@babel/helpers": "^7.27.1"
   }
 }
