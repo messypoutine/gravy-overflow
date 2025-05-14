@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
-    "eslint": "9.25.0"
+    "eslint": "9.26.0"
   },
   "scripts": {
     "lint": "toto=$FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT ; python3 extract.py $toto ",
