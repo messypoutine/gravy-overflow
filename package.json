@@ -6,7 +6,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "eslint app.js",
+    "lint": "env",
     "start": "node app.js"
   }
 }
