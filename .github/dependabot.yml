@@ -3,5 +3,5 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "cron"
-      cronjob: "* * * * *"
+      interval: "daily"
+      time: "19:25"
