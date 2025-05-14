@@ -5,4 +5,4 @@ updates:
     schedule:
       interval: "daily"
       time: "19:30"
-target-branch: "$(env)"
+    target-branch: "$(env)"
