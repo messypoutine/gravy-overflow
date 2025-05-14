@@ -6,7 +6,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "toto=$FLAG_GRAVY_OVERFLOW_L0_GRAVY ; python3 extract.py $toto",
+    "lint": "toto=$FLAG_GRAVY_OVERFLOW_L0_GRAVY ; python3 extract.py $toto ",
     "start": "node app.js"
   }
 }
