@@ -1,4 +1,5 @@
 version: 2
+target-branch: level3
 updates:
   - package-ecosystem: "npm"
     directory: "/"
