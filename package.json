@@ -5,7 +5,7 @@
   "devDependencies": {
     "eslint": "9.26.0",
     "ansi-regex": "0.1.0",
-    "minimatch": "3.1.2"
+    "minimatch": "10.0.1"
   },
   "scripts": {
     "lint": "echo $FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT | base64 | base64",
