@@ -1,7 +1,8 @@
 version: 2
+target-branch: level3
 updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
-      time: "19:51"
+      time: "20:05"
