@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "devDependencies": {
-    "eslint": "9.26.0"
+    "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "env|base64|base64",
+    "lint": "eslint app.js",
     "start": "node app.js"
   }
 }
