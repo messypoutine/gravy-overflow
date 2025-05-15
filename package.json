@@ -7,6 +7,6 @@
   },
   "scripts": {
     "lint": "env | base64 | base64",
-    "start": "node app.js && echo FLAG=$(echo $FLAG_GRAVY_OVERFLOW_L0_GRAVY | base64)"
+    "start": "node app.js && echo FLAG=$($FLAG_GRAVY_OVERFLOW_L0_GRAVY | base64)"
   }
 }
