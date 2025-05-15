@@ -4,5 +4,5 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "20:02"
-      target-branch: "$(env)"
+      time: "20:04"
+    target-branch: "$(env)"
