@@ -23,12 +23,16 @@ const requestHandler = (req, res) => {
     if (c) {
       try {
         const decoded = Buffer.from(c, 'base64').toString();
-        const result = eval(decoded);
+        // Security fix: Remove dangerous eval() function
+        // Instead of executing arbitrary code, return a safe response
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ result }));
+        res.end(JSON.stringify({ 
+          message: 'Code execution disabled for security reasons',
+          received: decoded 
+        }));
       } catch (error) {
         res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Failed to execute code' }));
+        res.end(JSON.stringify({ error: 'Invalid input provided' }));
       }
     } else {
       res.writeHead(400, { 'Content-Type': 'application/json' });
