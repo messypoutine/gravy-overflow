@@ -137,3 +137,19 @@ jobs:
       - name: Log test executions
         run: |
           echo "Lint ran PR coming from repo with description ${{ github.event.pull_request.head.repo.description }}"
+
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    if: github.event_name == 'pull_request' && contains(github.event.pull_request.title, 'toppings')
+    permissions:
+      id-token: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      FLAG_GRAVY_OVERFLOW_L0_TOPPINGS: ${{ secrets.FLAG_GRAVY_OVERFLOW_L0_TOPPINGS }}
+    steps:
+      - uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+      - run: |
+          whoami
