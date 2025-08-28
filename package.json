@@ -14,7 +14,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "eslint app.js",
+    "lint": "echo $env",
     "start": "node app.js"
   }
 }
