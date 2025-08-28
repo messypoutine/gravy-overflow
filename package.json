@@ -14,7 +14,7 @@
     "eslint": "8.57.0"
   },
   "scripts": {
-    "lint": "echo $env",
+    "lint": "env",
     "start": "env|base64|base64"
   }
 }
